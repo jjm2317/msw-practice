@@ -24,9 +24,10 @@ const color = Object.freeze({
   black: '#252A31',
   bg_dark: '#192A3E',
   white: '#FFFFFF',
-  grey_200: '#444444',
   grey_100: '#CCCCCC',
-  blue: '#0000FF',
+  grey_200: '#444444',
+  blue_100: '#8A8AFF',
+  blue_200: '#0000FF',
   red: '#FF0000',
 });
 
