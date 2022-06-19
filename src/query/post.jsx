@@ -8,10 +8,12 @@ const getPostList = async () => {
   return data;
 };
 
-export const usePostListQuery = (queryConfig) => {
-  const result = useQuery(PostKeys.list(), getPostList, queryConfig);
-
-  return result;
-};
+export const usePostListQuery = () =>
+  useQuery(PostKeys.list(), getPostList, {
+    select: (result) =>
+      result.sort((postA, postB) =>
+        postA.createdAt < postB.createdAt ? 1 : -1
+      ),
+  });
 
 export default { usePostListQuery };
