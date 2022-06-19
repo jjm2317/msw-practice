@@ -28,8 +28,9 @@ const App = () => {
       {editedPost && (
         <EditPostModal post={editedPost} setEditedPost={setEditedPost} />
       )}
-
-      <AddPostModal isOpen={isAddingPost} setIsOpen={setIsAddingPost} />
+      {isAddingPost && (
+        <AddPostModal isOpen={isAddingPost} setIsOpen={setIsAddingPost} />
+      )}
     </>
   );
 };
