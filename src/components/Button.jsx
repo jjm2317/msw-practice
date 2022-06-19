@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   padding: 2px 10px;
+  height: fit-content;
   background-color: ${({ bgColor, theme }) =>
     bgColor ? theme.color[bgColor] : theme.color.grey_100};
   color: ${({ theme }) => theme.color.white};

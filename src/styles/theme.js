@@ -40,7 +40,7 @@ const pretendard = css`
 const typography = Object.freeze({
   h1: css`
     ${pretendard}
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 60px;
     letter-spacing: -0.005em;
