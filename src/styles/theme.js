@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 export const PaletteMapper = ({ color, theme }) => {
   const curColor = color
     ?.split('.')
-    .reduce((acc, cur) => acc?.[cur], theme?.palette);
+    .reduce((acc, cur) => acc?.[cur], theme?.color);
 
   if (curColor && typeof curColor !== 'string') {
     return curColor.main;
@@ -25,8 +25,10 @@ const color = Object.freeze({
   bg_dark: '#192A3E',
   white: '#FFFFFF',
   grey_100: '#CCCCCC',
+  grey_150: '#AEAEAE',
   grey_200: '#444444',
   blue_100: '#8A8AFF',
+  blue_150: '#5C5CFF',
   blue_200: '#0000FF',
   red: '#FF0000',
 });
