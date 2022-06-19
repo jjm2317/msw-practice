@@ -21,6 +21,12 @@ const queryClient = new QueryClient({
   },
 });
 
+if (process.env.NODE_ENV === 'development') {
+  /* eslint-disable global-require */
+  const worker = require('tests/mockServer/browser').default;
+  worker.start();
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>

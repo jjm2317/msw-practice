@@ -4,9 +4,7 @@ import Main from 'Main';
 
 const App = () => (
   <Routes>
-    <Route path="/">
-      <Main />
-    </Route>
+    <Route element={<Main />} path="/" />
   </Routes>
 );
 export default App;
