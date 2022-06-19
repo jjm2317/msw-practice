@@ -12,8 +12,9 @@ const PostItem = ({ post, onEditClick, onPostClick, onDeleteClick }) => (
       {post.title}
     </Typography>
     <TagList>
-      {post.tags.map((tag) => (
-        <Tag key={tag} as="li">
+      {post.tags.map((tag, index) => (
+        /* eslint-disable react/no-array-index-key */
+        <Tag key={`${tag}-${index}`} as="li">
           {tag}
         </Tag>
       ))}

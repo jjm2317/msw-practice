@@ -37,8 +37,9 @@ const PostDetail = ({ setEditedPost }) => {
             {postDetail.createdAt}
           </Typography>
           <List>
-            {postDetail.tags.map((tag) => (
-              <Tag key={tag} as="li">
+            {postDetail.tags.map((tag, index) => (
+              /* eslint-disable react/no-array-index-key */
+              <Tag key={`${tag}-${index}`} as="li">
                 {tag}
               </Tag>
             ))}

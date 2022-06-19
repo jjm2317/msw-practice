@@ -29,6 +29,7 @@ const AddPostModal = ({ isOpen, setIsOpen }) => {
       confirmText="Add"
       isOpen={isOpen}
       label="Add Item"
+      post={{}}
       onCancel={handleCancel}
       onConfirm={handleConfirm}
     />
