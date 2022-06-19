@@ -1,9 +1,13 @@
 import { postList } from 'tests/mocks/postList';
 import { getStorageItem, setStorageItem } from 'utils';
 
-if (!Array.isArray(getStorageItem('data'))) {
-  setStorageItem('data', postList);
-}
+export const initPostList = () => {
+  if (!Array.isArray(getStorageItem('data'))) {
+    setStorageItem('data', postList);
+  }
+};
+
+initPostList();
 
 const list = (req, res, ctx) => {
   const data = getStorageItem('data');
