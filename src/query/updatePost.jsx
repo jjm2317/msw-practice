@@ -13,7 +13,7 @@ export const useUpdatePostMutation = (postId) => {
   return useMutation((post) => updatePost(postId, post), {
     onSuccess: () => {
       queryClient.invalidateQueries(PostKeys.list());
-      queryClient.invalidateQueries(PostKeys.detail(postId));
+      queryClient.refetchQueries(PostKeys.detail(postId), { active: true });
     },
   });
 };

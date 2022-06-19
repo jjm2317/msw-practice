@@ -5,6 +5,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import Container from 'components/Container';
 import Header from 'components/Header';
+import PostDetail from 'pages/detail/PostDetail';
 import AddPostModal from 'pages/main/components/AddPostModal';
 import EditPostModal from 'pages/main/components/EditPostModal';
 import MainPage from 'pages/main/MainPage';
@@ -19,6 +20,10 @@ const App = () => {
       <Container>
         <Header setIsAddingPost={setIsAddingPost} />
         <Routes>
+          <Route
+            element={<PostDetail setEditedPost={setEditedPost} />}
+            path="/posts/:postId"
+          />
           <Route
             element={<MainPage setEditedPost={setEditedPost} />}
             path="/"

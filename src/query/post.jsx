@@ -8,6 +8,11 @@ const getPostList = async () => {
   return data;
 };
 
+const getPostDetail = async (id) => {
+  const { data } = await axios.get(`/api/posts/${id}`);
+  return data;
+};
+
 export const usePostListQuery = () =>
   useQuery(PostKeys.list(), getPostList, {
     select: (result) =>
@@ -16,4 +21,7 @@ export const usePostListQuery = () =>
       ),
   });
 
-export default { usePostListQuery };
+export const usePostDetailQuery = (postId) =>
+  useQuery(PostKeys.detail(postId), () => getPostDetail(postId));
+
+export default { usePostListQuery, usePostDetailQuery };
