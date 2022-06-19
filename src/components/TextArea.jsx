@@ -2,7 +2,12 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const TextArea = ({ value, onChange, placeholder = '' }) => (
-  <Input placeholder={placeholder} value={value} onChange={onChange} />
+  <Input
+    aria-label="description"
+    placeholder={placeholder}
+    value={value}
+    onChange={onChange}
+  />
 );
 
 export default TextArea;

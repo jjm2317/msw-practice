@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const TextInput = ({ value, onChange, placeholder = '' }) => (
   <Input
+    aria-label="text input"
     placeholder={placeholder}
     type="text"
     value={value}
