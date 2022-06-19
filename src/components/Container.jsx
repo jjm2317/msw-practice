@@ -5,7 +5,7 @@ const Container = styled.div`
   min-height: 500px;
   max-width: 450px;
   margin: 0 auto;
-  background-color: ${({ theme }) => theme.color.grey_100}55;
+  background-color: ${({ theme }) => theme.color.white};
 `;
 
 export default Container;
