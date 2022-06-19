@@ -1,16 +1,17 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Typography from 'components/Typography';
 import PostList from 'pages/main/components/PostList';
 import { usePostListQuery } from 'query/post';
 
-const MainPage = () => {
+const MainPage = ({ setEditedPost }) => {
   const { data: postList, isSuccess } = usePostListQuery();
 
   return (
     <Container>
       {isSuccess ? (
-        <PostList postList={postList} />
+        <PostList postList={postList} setEditedPost={setEditedPost} />
       ) : (
         <Typography type="b1">loading</Typography>
       )}
@@ -19,6 +20,10 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+MainPage.propTypes = {
+  setEditedPost: PropTypes.func.isRequired,
+};
 
 const Container = styled.main`
   padding: 0;

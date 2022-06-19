@@ -57,7 +57,7 @@ const updatePost = (req, res, ctx) => {
 
   const posts = getStorageItem('data');
   const newPosts = posts.map((post) =>
-    post.id === postId ? { ...post, ...payload } : post
+    post.id === Number(postId) ? { ...post, ...payload } : post
   );
 
   setStorageItem('data', newPosts);

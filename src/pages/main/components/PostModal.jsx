@@ -57,8 +57,17 @@ const PostModal = ({
           text={tagText}
         />
         <ButtonContainer>
-          <Button>Cancel</Button>
-          <Button bgColor="blue_100" hoverColor="blue_200">
+          <Button onClick={onCancel}>Cancel</Button>
+          <Button
+            bgColor="blue_100"
+            hoverColor="blue_200"
+            onClick={onConfirm({
+              ...post,
+              title,
+              description,
+              tags: tagText ? tags.concat(tagText) : tags,
+            })}
+          >
             {confirmText}
           </Button>
         </ButtonContainer>
