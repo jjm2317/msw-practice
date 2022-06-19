@@ -13,7 +13,9 @@ const PostItem = ({ post, onEditClick, onPostClick, onDeleteClick }) => (
     </Typography>
     <TagList>
       {post.tags.map((tag) => (
-        <Tag as="li">{tag}</Tag>
+        <Tag key={tag} as="li">
+          {tag}
+        </Tag>
       ))}
     </TagList>
     <Description as="p" marginBottom={30} type="b1">
