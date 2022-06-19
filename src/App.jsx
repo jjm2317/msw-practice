@@ -5,17 +5,19 @@ import { createGlobalStyle } from 'styled-components';
 
 import Container from 'components/Container';
 import Header from 'components/Header';
+import AddPostModal from 'pages/main/components/AddPostModal';
 import EditPostModal from 'pages/main/components/EditPostModal';
 import MainPage from 'pages/main/MainPage';
 
 const App = () => {
   const [editedPost, setEditedPost] = useState(null);
+  const [isAddingPost, setIsAddingPost] = useState(false);
 
   return (
     <>
       <GlobalStyle />
       <Container>
-        <Header />
+        <Header setIsAddingPost={setIsAddingPost} />
         <Routes>
           <Route
             element={<MainPage setEditedPost={setEditedPost} />}
@@ -26,6 +28,8 @@ const App = () => {
       {editedPost && (
         <EditPostModal post={editedPost} setEditedPost={setEditedPost} />
       )}
+
+      <AddPostModal isOpen={isAddingPost} setIsOpen={setIsAddingPost} />
     </>
   );
 };

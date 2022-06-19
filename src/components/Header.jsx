@@ -1,17 +1,25 @@
 // import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Button from 'components/Button';
 import Typography from 'components/Typography';
 
-const Header = () => {
-  const handleClick = () => {};
+const Header = ({ setIsAddingPost }) => {
+  const handleClick = () => {
+    setIsAddingPost(true);
+  };
   return (
     <Container>
       <Typography as="h1" type="h1">
         Law&Good List
       </Typography>
-      <Button size="large" onClick={handleClick}>
+      <Button
+        bgColor="blue_100"
+        hoverColor="blue_150"
+        size="large"
+        onClick={handleClick}
+      >
         Add
       </Button>
     </Container>
@@ -20,7 +28,9 @@ const Header = () => {
 
 export default Header;
 
-Header.propTypes = {};
+Header.propTypes = {
+  setIsAddingPost: PropTypes.func.isRequired,
+};
 
 const Container = styled.header`
   width: 100%;
