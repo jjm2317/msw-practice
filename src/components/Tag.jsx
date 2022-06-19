@@ -5,6 +5,7 @@ const Tag = styled.div`
   background-color: ${({ theme }) => theme.color.blue_100};
   color: ${({ theme }) => theme.color.white};
   width: fit-content;
+  height: fit-content;
   border-radius: 3px;
   ${({ theme }) => theme.typography.caption}
 `;
