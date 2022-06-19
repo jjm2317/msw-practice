@@ -48,7 +48,8 @@ const ModalContainer = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 350px;
-  height: 350px;
+  min-height: 350px;
+  padding: 4px;
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 15px;
 `;
@@ -68,5 +69,6 @@ const TitleContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
+  flex: 1;
   height: 100%;
 `;
