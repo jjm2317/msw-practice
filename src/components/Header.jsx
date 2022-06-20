@@ -12,7 +12,7 @@ const Header = ({ setIsAddingPost }) => {
   return (
     <Container>
       <Typography as="h1" type="h1">
-        Law&Good List
+        msw practice
       </Typography>
       <Button
         bgColor="blue_100"
